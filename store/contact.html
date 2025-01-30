@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Adain</title>
+    <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+
+    <header>
+        <div class="navbar">
+            <div class="logo"> 
+                <img src="logo.png" alt="Adain Logo"> 
+                <span>Adain</span>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Products ▼</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Academy</a></li>
+                    <li><a href="#">Team</a></li>
+                </ul>
+            </nav>
+            <div class="menu-icon" onclick="toggleMenu()">☰</div>
+        </div>
+    </header>
+
+    <section class="features-section">
+        <div class="features-container">
+            <div class="features-image">
+                <img src="/assets/images/together.jpg" alt="Children using technology">
+            </div>
+
+            <div class="features-content">
+                <h2>People Technology Possibilities</h2>
+                <p>To link consumers with service providers via developed content-based products that service the global ICT sphere.</p>
+
+                <div class="feature">
+                    <div class="feature-icon"><img src="/assets/images/target.jpg" alt=""></div>
+                    <div class="feature-text">
+                        <h3>Mission</h3>
+                        <p>To link consumers with service providers via developed content-based products that service the global ICT sphere.</p>
+                    </div>
+                    <div class="feature-arrow">➡</div>
+                </div>
+
+                <div class="feature">
+                    <div class="feature-icon"><img src="/assets/images/vision.jpg" class="vision"></div>
+                    <div class="feature-text">
+                        <h3>Vision</h3>
+                        <p>To be the most preferred technological-based company in Nigeria and beyond that provides the right kind of products.</p>
+                    </div>
+                    <div class="feature-arrow">➡</div>
+                </div>
+
+                <div class="feature">
+                    <div class="feature-icon">🔍</div>
+                    <div class="feature-text">
+                        <h3>Values</h3>
+                        <p>Excellence and timely delivery of solutions, improvement, and possibilities.</p>
+                    </div>
+                    <div class="feature-arrow">➡</div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function toggleMenu() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        }
+    </script>
+
+</body>
+</html>
