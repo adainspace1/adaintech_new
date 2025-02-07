@@ -1,0 +1,1194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    /* Video Background Container */
+    /* .video-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: -1;  Ensures video stays behind all content 
+    } */
+
+    /* video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      min-width: 100%;
+      min-height: 100%;
+      object-fit: cover;  Ensures the video covers the viewport
+      z-index: -1;
+    } */
+/* Video Background Container for specific page */
+.video-background-page .video-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1; /* Ensures video stays behind all content */
+}
+
+.video-background-page video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover; /* Ensures the video covers the viewport */
+  z-index: -1;
+}
+
+
+
+
+
+
+
+
+    /* Content overlay for readability */
+    .hero-content {
+      position: relative;
+      z-index: 1; /* Ensures content stays above the video */
+      color: white;
+    }
+    
+    /* Dropdown container */
+.dropdown {
+  position: relative;
+}
+
+/* Dropdown menu */
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  padding: 0.5rem 0;
+  list-style: none;
+  display: none; /* Hidden by default */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  z-index: 10;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* Submenu links */
+.submenu-link {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: #333;
+  text-decoration: none;
+  font-size: 1.7rem;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.submenu-link:hover {
+  background-color: #f0f0f0;
+  color: #ff9000;
+}
+
+/* Responsive Design - Dropdown behavior on smaller screens */
+@media (max-width: 768px) {
+  .dropdown {
+    width: 100%;
+  }
+
+  .dropdown-menu {
+    position: static;
+    box-shadow: none;
+    display: none; /* Hidden by default */
+    width: 100%;
+    margin-top: 5px;
+  }
+
+  /* Show dropdown menu when clicked */
+  .dropdown.open .dropdown-menu {
+    display: block;
+  }
+
+  /* Mobile-specific submenu links */
+  .submenu-link {
+    padding: 1rem;
+    font-size: 1rem;
+  }
+}
+
+/* Show dropdown on click for smaller screens */
+@media (max-width: 768px) {
+  .dropdown {
+    cursor: pointer;
+  }
+  
+  .dropdown.open .dropdown-menu {
+    display: block;
+  }
+}
+
+
+  </style>
+  <!-- 
+    - primary meta tags
+  -->
+  <title>AdaIn Technologies Ltd.</title>
+  <meta name="title" content="AdaIn">
+  <meta name="description" content="This is a business agency html template made by codewithsadee">
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="/assets/images/Adain Transparent Official Icon White.png" type="image/svg+xml">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap" rel="stylesheet">
+
+  <!-- 
+    - custom css lin
+  -->
+  <link rel="stylesheet" href="/assets/css/style.css">
+
+  <!-- 
+    - preload images
+  -->
+  <link rel="preload" as="image" href="./assets/images/hero-bg.jpg">
+  <link rel="preload" as="image" href="./assets/images/hero-slide-1.jpg">
+  <link rel="preload" as="image" href="./assets/images/hero-slide-2.jpg">
+  <link rel="preload" as="image" href="./assets/images/hero-slide-3.jpg">
+
+</head>
+
+<body class="video-background-page">
+    <!-- Your page content here -->
+  
+  
+    <!-- Video Background -->
+  <div class="video-container">
+    <video autoplay loop muted playsinline>
+      <source src="/assets/images/9928.MP4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+  <!-- 
+    - #HEADER
+  -->
+
+  <header class="header" data-header>
+    <div class="container">
+
+      <a href="#" class="logo">
+        <img src="/assets/images/logo-light.svg" width="74" height="24" alt="Adex home" class="logo-light">
+
+        <img src="/assets/images/logo-dark.svg" width="74" height="24" alt="Adex home" class="logo-dark">
+      </a>
+
+      <nav class="navbar" data-navbar>
+
+        <div class="navbar-top">
+          <a href="#" class="logo">
+            <img src="/assets/images/logo-light.svg" width="74" height="24" alt="Adex home">
+          </a>
+
+          <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
+            <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+          </button>
+        </div>
+
+        <ul class="navbar-list">
+
+          <li>
+            <a href="/index.html" class="navbar-link">Home</a>
+          </li>
+
+          <li class="dropdown">
+            <a href="#" class="navbar-link">Product</a>
+            <ul class="dropdown-menu">
+              <li><a href="#" class="submenu-link">Quickmed</a></li>
+              <li><a href="#" class="submenu-link">Adnet</a></li>
+              <li><a href="#" class="submenu-link">Geez</a></li>
+              <li><a href="https://hacked8.vercel.app/" class="submenu-link">Hacked8</a></li>
+
+            </ul>
+          </li>
+          
+          <li>
+            <a href="/store/about.html" class="navbar-link">About</a>
+          </li>
+
+          <li>
+            <a href="#" class="navbar-link">Services</a>
+          </li>
+
+          <li>
+            <a href="https://hacked8.vercel.app/" class="navbar-link">Academy</a>
+          </li>
+
+          <li>
+            <a href="/tean.html" class="navbar-link">Team</a>
+          </li>
+
+        </ul>
+
+        <div class="wrapper">
+          <a href="mailto:info@adaintech.com" class="contact-link">info@adaintech.com</a>
+
+          <a href="tel:09045585701" class="contact-link">09045585701</a>
+        </div>
+
+        <ul class="social-list">
+
+          <!-- <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-twitter"></ion-icon>
+            </a>
+          </li> -->
+
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-facebook"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-tiktok"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-goggle"></ion-icon>
+            </a>
+          </li>
+
+          <!-- <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-youtube"></ion-icon>
+            </a>
+          </li> -->
+
+        </ul>
+
+      </nav>
+
+      <!-- <a href="#" class="btn btn-primary">Free Trial</a> -->
+
+      <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
+        <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
+      </button>
+
+      <div class="overlay" data-nav-toggler data-overlay></div>
+
+    </div>
+  </header>
+
+
+
+
+
+  <main>
+    <article>
+
+      <!-- 
+        - #HERO
+      -->
+
+      <section class="section hero has-bg-image" aria-label="home"
+        style="background-image: url('')">
+        <div class="container">
+
+          <div class="hero-content">
+
+            <h1 class="h1 hero-title" style="color: #ff9000;">WELCOME TO ADAIN TECHNOLOGIES</h1>
+
+            <p class="hero-text">
+                Pioneering the future with cutting-edge
+                AI and innovative tech solutions. Empowering businesses
+                through intelligent automation and seamless integration.
+            </p>
+
+            <div class="btn-wrapper">
+
+              <a href="#" class="btn btn-primary">GET STARTED</a>
+
+              <!-- <a href="#" class="btn btn-outline">Contact Us</a> -->
+
+            </div>
+
+          </div>
+
+          <div class="hero-slider" data-slider>
+
+            <div class="slider-inner">
+              <ul class="slider-container" data-slider-container>
+
+                <li class="slider-item">
+<!-- 
+                  <figure class="img-holder" style="--width: 575; --height: 550;">
+                    <img src="./assets/images/hero-slide-1.jpg" width="575" height="550" alt="" class="img-cover">
+                  </figure>
+
+                </li>
+
+                <li class="slider-item">
+
+                  <div class="hero-card">
+                    <figure class="img-holder" style="--width: 575; --height: 550;">
+                      <img src="./assets/images/hero-slide-2.jpg" width="575" height="550" alt="hero banner"
+                        class="img-cover">
+                    </figure>
+
+                    <button class="play-btn" aria-label="play adex intro">
+                      <ion-icon name="play" aria-hidden="true"></ion-icon>
+                    </button>
+                  </div>
+
+                </li>
+
+                <li class="slider-item">
+
+                  <figure class="img-holder" style="--width: 575; --height: 550;">
+                    <img src="./assets/images/hero-slide-3.jpg" width="575" height="550" alt="" class="img-cover">
+                  </figure>
+
+                </li> -->
+
+              </ul>
+            </div>
+
+            <button class="slider-btn prev" aria-label="slide to previous" data-slider-prev>
+              <ion-icon name="arrow-back"></ion-icon>
+            </button>
+
+            <button class="slider-btn next" aria-label="slide to next" data-slider-next>
+              <ion-icon name="arrow-forward"></ion-icon>
+            </button>
+
+          </div>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #SERVICE
+      -->
+
+      <section class="section service" aria-labelledby="service-label">
+        <div class="container">
+
+          <p class="section-subtitle" id="service-label">What We Do?</p>
+
+          <h2 class="h2 section-title">
+            The service we offer is specifically designed to meet your needs.
+          </h2>
+
+          <ul class="grid-list">
+
+            <li>
+              <div class="service-card">
+
+                <div class="card-icon">
+                  <ion-icon name="call-outline" aria-hidden="true"></ion-icon>
+                </div>
+
+                <h3 class="h4 card-title">24/7 Support</h3>
+
+                <p class="card-text">
+                  Our 24/7 support service ensures that assistance is available around the clock, providing peace of mind whenever issues arise. 
+                </p>
+
+                <a href="#" class="btn-text">
+                  <!-- <span class="span">Learn More</span> -->
+
+                  <!-- <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon> -->
+                </a>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="service-card">
+
+                <div class="card-icon">
+                  <ion-icon name="shield-checkmark-outline" aria-hidden="true"></ion-icon>
+                </div>
+
+                <h3 class="h4 card-title">Automation</h3>
+
+                <p class="card-text">
+                  Automation uses technology to perform tasks with minimal human intervention, improving efficiency, accuracy.
+                </p>
+
+                <a href="#" class="btn-text">
+                  <!-- <span class="span">Learn More</span> -->
+
+                  <!-- <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon> -->
+                </a>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="service-card">
+
+                <div class="card-icon">
+                  <ion-icon name="cloud-download-outline" aria-hidden="true"></ion-icon>
+                </div>
+
+                <h3 class="h4 card-title">Daily Updates</h3>
+
+                <p class="card-text">
+                  Stay informed with our daily update, bringing you the latest news, trends, and insights across industries.
+                </p>
+
+                <a href="#" class="btn-text">
+                  <!-- <span class="span">Learn More</span> -->
+
+                  <!-- <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon> -->
+                </a>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="service-card">
+
+                <div class="card-icon">
+                  <ion-icon name="pie-chart-outline" aria-hidden="true"></ion-icon>
+                </div>
+
+                <h3 class="h4 card-title">Market Research</h3>
+
+                <p class="card-text">
+                  Market research is the process of gathering, analyzing, and interpreting data about a market.
+                </p>
+
+                <a href="#" class="btn-text">
+                  <!-- <span class="span">Learn More</span> -->
+
+                  <!-- <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon> -->
+                </a>
+
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+ 
+
+
+      
+        <!-- - #ABOUT  -->
+
+      <section class="about" aria-labelledby="about-label">
+        <div class="container">
+
+          <figure class="about-banner">
+            <img src="/assets/images/Adain Transparent Official Icon White.png" width="800" height="580" loading="lazy" alt="about banner"
+              class="w-100">
+          </figure>
+
+          <div class="about-content">
+
+            <p class="section-subtitle" id="about-label">About Us?</p>
+
+            <h2 class="h2 section-title">
+              We bring solutions to make life easier for our clients.
+            </h2>
+
+            <ul>
+
+              <li class="about-item">
+                <div class="accordion-card expanded" data-accordion>
+
+                  <h3 class="card-title">
+                    <button class="accordion-btn" data-accordion-btn>
+                      <ion-icon name="chevron-down-outline" style="color: #000;" aria-hidden="true" class="down"></ion-icon>
+
+                      <spna class="span h5" style="color: #ff9000;">Professional Design</spna>
+                    </button>
+                  </h3>
+
+                  <p class="accordion-content">
+                    AdaIn Technologies Ltd is a cutting-edge technology company specializing in innovative solutions across software development, IT consulting, and digital transformation. The company is dedicated to providing businesses with advanced technology services, including cloud computing, AI-driven solutions, cybersecurity, and enterprise software development. With a focus on efficiency, security, and scalability, AdaIn Technologies Ltd empowers organizations to stay ahead in the ever-evolving digital landscape.
+
+
+
+
+
+
+
+
+                  </p>
+
+                </div>
+              </li>
+
+              <li class="about-item">
+                <div class="accordion-card" data-accordion>
+
+                  <h3 class="card-title">
+                    <button class="accordion-btn" data-accordion-btn>
+                      <ion-icon name="chevron-down-outline" style="color: #000;" aria-hidden="true" class="down"></ion-icon>
+
+                      <spna class="span h5" >Top-Notch Support</spna>
+                    </button>
+                  </h3>
+
+                  <p class="accordion-content">
+                    Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo
+                    sit amet risus. Cras mattis consectetur purus sit amet fermentum. Praesent commodo cursus magna,
+                    vel.
+                  </p>
+
+                </div>
+              </li>
+
+              <li class="about-item">
+                <div class="accordion-card" data-accordion>
+
+                  <h3 class="card-title">
+                    <button class="accordion-btn" data-accordion-btn>
+                      <ion-icon name="chevron-down-outline" style="color: #000;" aria-hidden="true" class="down"></ion-icon>
+
+                      <spna class="span h5" >Exclusive Assets</spna>
+                    </button>
+                  </h3>
+
+                  <p class="accordion-content">
+                    Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo
+                    sit amet risus. Cras mattis consectetur purus sit amet fermentum. Praesent commodo cursus magna,
+                    vel.
+                  </p>
+
+                </div>
+              </li>
+
+            </ul>
+
+          </div>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #FEATURE
+      -->
+<!-- 
+      <section class="section feature" aria-labelledby="feature-label">
+        <div class="container">
+
+          <figure class="feature-banner">
+            <img src="./assets/images/feature-banner.png" width="800" height="531" loading="lazy" alt="feature banner"
+              class="w-100">
+          </figure>
+
+          <div class="feature-content">
+
+            <p class="section-subtitle" id="feautre-label">Our Solutions</p>
+
+            <h2 class="h2 section-title">
+              We make your spending stress-free for you to have the perfect control.
+            </h2>
+
+            <p class="section-text">
+              Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras justo odio,
+              dapibus ac facilisis in, egestas eget quam. Praesent commodo cursus.
+            </p>
+
+            <ul class="feature-list">
+
+              <li>
+                <div class="feature-card">
+
+                  <div class="card-icon">
+                    <ion-icon name="checkmark" aria-hidden="true"></ion-icon>
+                  </div>
+
+                  <span class="span">
+                    Aenean quam ornare. Curabitur blandit.
+                  </span>
+
+                </div>
+              </li>
+
+              <li>
+                <div class="feature-card">
+
+                  <div class="card-icon">
+                    <ion-icon name="checkmark" aria-hidden="true"></ion-icon>
+                  </div>
+
+                  <span class="span">
+                    Nullam quis risus eget urna mollis ornare.
+                  </span>
+
+                </div>
+              </li>
+
+              <li>
+                <div class="feature-card">
+
+                  <div class="card-icon">
+                    <ion-icon name="checkmark" aria-hidden="true"></ion-icon>
+                  </div>
+
+                  <span class="span">
+                    Etiam porta euismod malesuada mollis.
+                  </span>
+
+                </div>
+              </li>
+
+              <li>
+                <div class="feature-card">
+
+                  <div class="card-icon">
+                    <ion-icon name="checkmark" aria-hidden="true"></ion-icon>
+                  </div>
+
+                  <span class="span">
+                    Vivamus sagittis lacus vel augue rutrum.
+                  </span>
+
+                </div>
+              </li>
+
+            </ul>
+
+          </div>
+
+        </div>
+      </section>
+ -->
+
+
+
+
+      <!-- 
+        - #STATS
+      -->
+
+      <!-- <section class="stats" aria-label="our stats">
+        <div class="container">
+
+          <ul class="stats-card has-bg-image" style="background-image: url('./assets/images/stats-bg.jpg')">
+
+            <li>
+              <p class="card-text">
+                <span class="h1">7518</span>
+
+                <spna class="span">Completed Projects</spna>
+              </p>
+            </li>
+
+            <li>
+              <p class="card-text">
+                <span class="h1">3472</span>
+
+                <spna class="span">Happy Customers</spna>
+              </p>
+            </li>
+
+            <li>
+              <p class="card-text">
+                <span class="h1">2184</span>
+
+                <spna class="span">Expert Employees</spna>
+              </p>
+            </li>
+
+            <li>
+              <p class="card-text">
+                <span class="h1">4523</span>
+
+                <spna class="span">Awards Won</spna>
+              </p>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+
+  -->
+
+
+      <!-- 
+        - #PROJECT
+      -->
+
+      <section class="section project" aria-labelledby="project-label">
+        <div class="container">
+
+          <p class="section-subtitle" id="project-label">Case Studies</p>
+
+          <h2 class="h2 section-title">
+            Check out some of our awesome projects with creative ideas and great design.
+          </h2>
+
+          <ul class="grid-list">
+
+            <li>
+              <div class="project-card">
+
+                <figure class="card-banner img-holder" style="--width: 560; --height: 350;">
+                  <img src="/assets/images/original.jpg" width="560" height="350" loading="lazy"
+                    alt="image" class="img-cover">
+                </figure>
+
+                <div class="card-content">
+
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Artificial Intelligence</a>
+                  </h3>
+
+                  <p class="card-text">
+                    Artificial Intelligence (AI) enables machines to learn, reason, and make decisions, mimicking human intelligence. It powers innovations in automation, data analysis, and problem-solving across various industries.                  </p>
+
+                  <ul class="card-meta-list">
+
+                    <li class="card-meta-item">
+                      <ion-icon name="calendar-outline" style="color: #ff9000;" aria-hidden="true"></ion-icon>
+
+                      <time class="meta-text" datetime="2022-04-14"></time>
+                    </li>
+
+                    <li class="card-meta-item">
+                      <ion-icon name="document-text-outline" style="color: #ff9000;" aria-hidden="true"></ion-icon>
+
+                      <span class="meta-text"></span>
+                    </li>
+
+                  </ul>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="project-card">
+
+                <figure class="card-banner img-holder" style="--width: 560; --height: 350;">
+                  <img src="/assets/images/cyber.jpg" width="560" height="350" loading="lazy"
+                    alt="image" class="img-cover">
+                </figure>
+
+                <div class="card-content">
+
+                  <h3 class="h3">
+                    <a href="#" class="card-title">CyberSecurity</a>
+                  </h3>
+
+                  <p class="card-text">
+                    Cybersecurity protects digital systems, networks, and data from cyber threats, ensuring privacy and safety. It involves encryption, firewalls, and proactive monitoring to prevent breaches and cyberattacks.                  </p>
+
+                  <ul class="card-meta-list">
+
+                    <li class="card-meta-item">
+                      <ion-icon name="calendar-outline" style="color: #ff9000;" aria-hidden="true"></ion-icon>
+
+                      <time class="meta-text" datetime="2022-03-29"></time>
+                    </li>
+
+                    <li class="card-meta-item">
+                      <ion-icon name="document-text-outline" style="color: #ff9000;" aria-hidden="true"></ion-icon>
+
+                      <span class="meta-text"></span>
+                    </li>
+
+                  </ul>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="project-card">
+
+                <figure class="card-banner img-holder" style="--width: 560; --height: 350;">
+                  <img src="/assets/images/key.jpg" width="560" height="350" loading="lazy"
+                    alt="image" class="img-cover">
+                </figure>
+
+                <div class="card-content">
+
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Internet Of Things</a>
+                  </h3>
+
+                  <p class="card-text">
+The Internet of Things (IoT) connects devices and systems, enabling seamless communication and automation. It enhances efficiency, security, and real-time data analysis across industries.
+                  <ul class="card-meta-list">
+
+                    <li class="card-meta-item">
+                      <ion-icon name="calendar-outline" style="color: #ff9000;" aria-hidden="true"></ion-icon>
+
+                      <time class="meta-text" datetime="2022-02-26"></time>
+                    </li>
+
+                    <li class="card-meta-item">
+                      <ion-icon name="document-text-outline" style="color: #ff9000;" aria-hidden="true"></ion-icon>
+
+                      <span class="meta-text"></span>
+                    </li>
+
+                  </ul>
+
+                </div>
+
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+ 
+
+
+
+
+
+
+      <!-- 
+        - #PRODUCT
+      -->
+
+      <section class="section project" aria-labelledby="project-label">
+        <div class="container">
+
+          <p class="section-subtitle" id="project-label"></p>
+
+          <h2 class="h2 section-title">
+            Our Valued Partners
+          </h2>
+
+          <ul class="grid-list">
+
+            <li>
+              <div class="project-card">
+
+                <figure class="card-banner img-holder" style="--width: 560; --height: 310;">
+                  <img src="/assets/images/skyblue.png" width="560" height="350" loading="lazy"
+                    alt="image" class="img-cover">
+                </figure>
+
+                <div class="card-content">
+
+                  <h3 class="h3">
+                    <a href="#" class="card-title">SkyBlue</a>
+                  </h3>
+
+                  <p class="card-text">
+                    SkyBlue Water Company is a leading provider of pure, refreshing, and high-quality bottled water. Committed to excellence, we utilize advanced purification and filtration technologies to ensure every drop meets the highest industry standards.                   </p>
+
+                  <ul class="card-meta-list">
+
+                    <li class="card-meta-item">
+                      <!-- <ion-icon name="calendar-outline" aria-hidden="true"></ion-icon> -->
+
+                      <time class="meta-text" datetime="2022-04-14"></time>
+                    </li>
+
+                    <li class="card-meta-item">
+                      <!-- <ion-icon name="document-text-outline" aria-hidden="true"></ion-icon> -->
+
+                      <span class="meta-text"></span>
+                    </li>
+
+                  </ul>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="project-card">
+
+                <figure class="card-banner img-holder" style="--width: 310; --height: 270;">
+                  <img src="/assets/images/nhis.jfif" width="560" height="350" loading="lazy"
+                    alt="image" class="img-cover">
+                </figure>
+
+                <div class="card-content">
+
+                  <h3 class="h3">
+                    <a href="#" class="card-title">NPHCDA</a>
+                  </h3>
+
+                  <p class="card-text">
+                    The National Primary Healthcare Development Agency (NPHCDA) is dedicated to strengthening primary healthcare systems and ensuring accessible, affordable, and quality healthcare for all.</p>
+                  <ul class="card-meta-list">
+
+                    <li class="card-meta-item">
+                      <!-- <ion-icon name="calendar-outline" aria-hidden="true"></ion-icon> -->
+
+                      <time class="meta-text" datetime="2022-03-29"></time>
+                    </li>
+
+                    <li class="card-meta-item">
+                      <!-- <ion-icon name="document-text-outline" aria-hidden="true"></ion-icon> -->
+
+                      <span class="meta-text"></span>
+                    </li>
+
+                  </ul>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="project-card">
+
+                <figure class="card-banner img-holder" style="--width: 560; --height: 350;">
+                  <img src="/assets/images/WhatsApp Image 2025-01-23 at 12.25.37 PM.jpeg" width="560" height="350" loading="lazy"
+                    alt="image" class="img-cover">
+                </figure>
+
+                <div class="card-content">
+
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Hacked8 Academy</a>
+                  </h3>
+
+                  <p class="card-text">
+                    Hacked8 Academy is a premier learning hub for aspiring web developers, equipping students with the skills needed to thrive in the tech industry. Our hands-on approach covers front-end and back-end development, UI/UX design, and the latest web technologies.
+                    
+                  <ul class="card-meta-list">
+
+                    <li class="card-meta-item">
+                      <!-- <ion-icon name="calendar-outline" aria-hidden="true"></ion-icon> -->
+
+                      <time class="meta-text" datetime="2022-02-26"></time>
+                    </li>
+
+                    <li class="card-meta-item">
+                      <!-- <ion-icon name="document-text-outline" aria-hidden="true"></ion-icon> -->
+
+                      <span class="meta-text"></span>
+                    </li>
+
+                  </ul>
+
+                </div>
+
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+ 
+
+
+
+      <!-- 
+        - #CTA
+      -->
+
+      <section class="cta" aria-label="call to action">
+        <div class="container">
+
+          <h2 class="h2 section-title">
+            Join our community by using our services and grow your business.
+          </h2>
+<!-- 
+          <a href="#" class="btn btn-primary">Try it For Free</a> -->
+
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+
+
+
+
+  <!-- 
+    - #FOOTER
+  -->
+
+  <footer class="footer">
+    <div class="container grid-list">
+
+      <div class="footer-brand">
+
+        <a href="#" class="logo">
+          <img src="/assets/images/logo-light.svg" width="74" height="24" alt="Adex home">
+        </a>
+
+        <p class="footer-text" style="color: #ff9000;">
+         People Technology Possibilities
+        </p>
+
+
+        <p class="footer-text">
+          &copy;2023 AdainTech<br>All rights reserved.
+        </p>
+
+        <ul class="social-list">
+
+          <li>
+            <a href="https://www.facebook.com/Geezng?mibextid=LQQJ4d&mibextid=LQQJ4d" class="social-link">
+              <ion-icon name="logo-facebook"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://www.tiktok.com/@adain_tech?_t=ZM-8tPv57jvW2Y&_r=1" class="social-link">
+              <ion-icon name="logo-tiktok"></ion-icon>
+            </a>
+          </li>
+
+          <!-- <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-dribbble"></ion-icon>
+            </a>
+          </li> -->
+
+          <!-- <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+          </li> -->
+
+          <!-- <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-youtube"></ion-icon>
+            </a>
+          </li> -->
+
+        </ul>
+
+      </div>
+
+      <ul class="footer-list">
+
+        <li>
+          <p class="h4 footer-list-title">Get in Touch</p>
+        </li>
+
+        <li>
+          <address class="footer-text">
+           First Floor Skyblue Building Aso B
+          </address>
+        </li>
+
+        <li>
+          <a href="mailto:info@adaintech.com" class="footer-link">info@adaintech.com</a>
+        </li>
+
+        <li>
+          <a href="tel:09045585701" class="footer-link">09045585701</a>
+        </li>
+        
+        <!-- <li>
+          <a href="tel:09082603201" class="footer-link">09082603201</a>
+        </li> -->
+
+      </ul>
+
+      <ul class="footer-list">
+
+        <li>
+          <p class="h4 footer-list-title">Company</p>
+        </li>
+
+        <li>
+          <a href="/store/about.html" class="footer-link">About</a>
+        </li>
+
+        <li>
+          <a href="#" class="footer-link">Our Vision</a>
+        </li>
+
+        <li>
+          <a href="#" class="footer-link">Our Mission</a>
+        </li>
+
+        <li>
+          <a href="/tean.html" class="footer-link">Our Team</a>
+        </li>
+
+        <li>
+          <a href="#" class="footer-link"></a>
+        </li>
+
+      </ul>
+
+      <div class="footer-list">
+
+        <p class="h4 footer-list-title">Our Newsletter</p>
+
+        <p class="footer-text">
+          Subscribe to our newsletter.
+        </p>
+
+        <form action="" class="input-wrapper">
+          <input type="email" name="email_address" placeholder="Email Address" required class="input-field">
+
+          <button type="submit" class="submit-btn">Join</button>
+        </form>
+
+      </div>
+
+    </div>
+  </footer>
+
+
+
+
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="./assets/js/script.js"></script>
+
+  <!-- 
+    - ionicon
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>
+

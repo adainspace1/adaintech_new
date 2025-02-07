@@ -1,0 +1,11 @@
+<svg width="74" height="24" viewBox="0 0 74 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g clip-path="url(#clip0_1_8)">
+    <!-- "Adain" text styling with increased font size and weight -->
+    <text x="5" y="17" font-family="Arial, sans-serif" font-size="22" font-weight="900" fill="white">Adain</text>
+  </g>
+  <defs>
+    <clipPath id="clip0_1_8">
+      <rect width="74" height="24" fill="white"/>
+    </clipPath>
+  </defs>
+</svg>

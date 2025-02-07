@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meet Our Team - AdaIn Technologies Ltd.</title>
+  
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="/assets/images/Adain Transparent Official Icon White.png" type="image/svg+xml">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap" rel="stylesheet">
+
+  <!-- 
+    - custom css lin
+  -->
+  <link rel="stylesheet" href="tean.css">
+
+  <!-- 
+    - preload images
+  -->
+  <link rel="preload" as="image" href="./assets/images/hero-bg.jpg">
+  <link rel="preload" as="image" href="./assets/images/hero-slide-1.jpg">
+  <link rel="preload" as="image" href="./assets/images/hero-slide-2.jpg">
+  <link rel="preload" as="image" href="./assets/images/hero-slide-3.jpg">
+
+  
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+        .team-section {
+      text-align: center;
+      padding: 4rem 1rem;
+      background-color: #ffffff;
+      transform: translateY(90px);
+    }
+
+    .team-section h1 {
+      font-size: 2.5rem;
+      color: #333;
+      margin-bottom: 1rem;
+    }
+
+    .team-section p {
+      font-size: 1rem;
+      color: #666;
+      margin-bottom: 3rem;
+    }
+
+    .team-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      padding: 0 1rem;
+    }
+
+    .team-card {
+      position: relative;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .team-card2 {
+      position: relative;
+      transform: translateY(14px);
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .team-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    }
+    .team-card2:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    }
+
+
+    .team-card img {
+      width: 100%;
+      height: 300px;
+      object-fit:fill;
+      transition: transform 0.3s ease;
+    }
+    .team-card2 img {
+      width: 100%;
+      height: 300px;
+      object-fit:fill;
+      transition: transform 0.3s ease;
+    }
+
+
+    .team-card:hover img {
+      transform: scale(1.1);
+    }
+    
+    .team-card2:hover img {
+      transform: scale(1.1);
+    }
+
+    .team-card .info {
+      padding: 1.5rem;
+      text-align: center;
+    }
+    .team-card2 .info {
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    .team-card .info h2 {
+      font-size: 1.5rem;
+      color: #333;
+      margin-bottom: 0.5rem;
+    }
+    .team-card2 .info h2 {
+      font-size: 1.5rem;
+      color: #333;
+      margin-bottom: 0.5rem;
+    }
+
+    .team-card .info p {
+      font-size: 1.4rem;
+      color: #777;
+      margin-bottom: 1rem;
+    }
+    .team-card2 .info p {
+      font-size: 1.4rem;
+      color: #777;
+      margin-bottom: 1rem;
+    }
+
+
+    .team-card .info a {
+      text-decoration: none;
+      color: #ff9000;
+      font-weight: 700;
+      transition: color 0.3s ease;
+    }
+
+    .team-card2 .info a {
+      text-decoration: none;
+      color: #ff9000;
+      font-weight: 700;
+      transition: color 0.3s ease;
+    }
+
+    .team-card .info a:hover {
+      color: #333;
+    }
+    .team-card2 .info a:hover {
+      color: #333;
+    }
+     
+
+    /* Dropdown container */
+    .dropdown {
+  position: relative;
+}
+
+/* Dropdown menu */
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  padding: 0.5rem 0;
+  list-style: none;
+  display: none; /* Hidden by default */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  z-index: 10;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* Submenu links */
+.submenu-link {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: #333;
+  text-decoration: none;
+  font-size: 1.7rem;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.submenu-link:hover {
+  background-color: #f0f0f0;
+  color: #ff9000;
+}
+
+/* Responsive Design - Dropdown behavior on smaller screens */
+@media (max-width: 768px) {
+  .dropdown {
+    width: 100%;
+  }
+
+  .dropdown-menu {
+    position: static;
+    box-shadow: none;
+    display: none; /* Hidden by default */
+    width: 100%;
+    margin-top: 5px;
+  }
+
+  /* Show dropdown menu when clicked */
+  .dropdown.open .dropdown-menu {
+    display: block;
+  }
+
+  /* Mobile-specific submenu links */
+  .submenu-link {
+    padding: 1rem;
+    font-size: 1rem;
+  }
+}
+
+/* Show dropdown on click for smaller screens */
+@media (max-width: 768px) {
+  .dropdown {
+    cursor: pointer;
+  }
+  
+  .dropdown.open .dropdown-menu {
+    display: block;
+  }
+}
+
+
+  </style>
+  </style>
+</head>
+
+<body>
+  <header class="header" data-header>
+    <div class="container">
+
+      <a href="#" class="logo">
+        <img src="/assets/images/logo-dark.svg" width="74" height="24" alt="Adex home" class="logo-light">
+        <img src="/assets/images/logo-dark.svg" width="74" height="24" alt="Adex home" class="logo-dark">
+      </a>
+
+      <nav class="navbar" data-navbar>
+        <div class="navbar-top">
+          <a href="#" class="logo">
+            <img src="/assets/images/logo-light.svg" width="74" height="24" alt="Adex home">
+          </a>
+
+          <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
+            <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+          </button>
+        </div>
+
+        <ul class="navbar-list">
+          <li><a href="/index.html" class="navbar-link">Home</a></li>
+          <li class="dropdown">
+            <a href="#" class="navbar-link">Product</a>
+            <ul class="dropdown-menu">
+              <li><a href="#" class="submenu-link">Quickmed</a></li>
+              <li><a href="#" class="submenu-link">Adnet</a></li>
+              <li><a href="#" class="submenu-link">Geez</a></li>
+              <li><a href="https://hacked8.vercel.app/" class="submenu-link">Hacked8</a></li>
+            </ul>
+          </li>
+          <li><a href="/store/about.html" class="navbar-link">About</a></li>
+          <li><a href="" class="navbar-link">Services</a></li>
+          
+          <li><a href="https://hacked8.vercel.app/" class="navbar-link">Academy</a></li>
+          <li><a href="/tean.html" class="navbar-link">Team</a></li>
+        </ul>
+
+        <div class="wrapper">
+          <a href="mailto:info@adaintech.com" class="contact-link">info@adaintech.com</a>
+          <a href="tel:09045585701" class="contact-link">09045585701</a>
+        </div>
+
+        <ul class="social-list">
+          <!-- <li><a href="#" class="social-link"><ion-icon name="logo-twitter"></ion-icon></a></li> -->
+          <li><a href="#" class="social-link"><ion-icon name="logo-facebook"></ion-icon></a></li>
+          <li><a href="#" class="social-link"><ion-icon name="logo-tiktok"></ion-icon></a></li>
+          <li><a href="#" class="social-link"><ion-icon name="logo-goggle"></ion-icon></a></li>
+          <!-- <li><a href="#" class="social-link"><ion-icon name="logo-youtube"></ion-icon></a></li> -->
+        </ul>
+      </nav>
+
+      <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
+        <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
+      </button>
+
+      <div class="overlay" data-nav-toggler data-overlay></div>
+
+    </div>
+  </header>
+
+  <section class="team-section">
+    <h1>Meet Our Team</h1>
+    <p></p>
+    <h6>Get to know the amazing people who make AdaIn Technologies Ltd.</h6>
+
+    <div class="team-container">
+      <div class="team-card">
+        <img src="/assets/images/Billy.JPG" alt="Team Member 1">
+        <div class="info">
+          <h2>Billy Gbadamosi</h2>
+          <p>Head Of Media</p>
+          <!-- <a href="#">Read More</a> -->
+        </div>
+      </div>
+
+      <div class="team-card">
+        <img src="/assets/images/niyu2.jpg" alt="Team Member 2">
+        <div class="info">
+          <h2>Shazaniyu Gbadamosi</h2>
+          <p>CTO</p>
+          <!-- <a href="#">Read More</a> -->
+        </div>
+      </div>
+
+      <div class="team-card">
+        <img src="/assets/images/WhatsApp Image 2025-01-23 at 12.22.55 PM.jpeg" alt="Team Member 3">
+        <div class="info">
+          <h2>Zainab Kehinde</h2>
+          <p>UI/UX Designer</p>
+          <!-- <a href="#">Read More</a> -->
+        </div>
+      </div>
+
+
+      <div class="team-card">
+        <img src="/assets/images/Admain.jpg" alt="Team Member 2">
+        <div class="info">
+          <h2>Habib T Olamide</h2>
+          <p>Admin Officer</p>
+          <!-- <a href="#">Read More</a> -->
+        </div>
+      </div>
+
+      <div class="team-card2">
+        <img src="/assets/images/my image.jpg" alt="Team Member 4">
+        <div class="info">
+          <h2>Obhiosa Destine</h2>
+          <p>FullStack Developer</p>
+          <!-- <a href="#">Read More</a> -->
+        </div>
+
+
+        
+      </div>
+     
+ 
+        <div class="team-container" >
+          <div class="team-card3">
+            <img src="/assets/images/WhatsApp Image 2025-01-30 at 4.13.49 AM (2).jpeg" alt="Team Member 1">
+            <div class="info">
+              <h2>Obhiosa Wisdom</h2>
+              <p>FullStack Developer</p>
+              <!-- <a href="#">Read More</a> -->
+            </div>
+          </div>
+    
+         
+    
+  </section>
+
+ 
+
+ 
+
+    
+
+      <!-- 
+        - #CTA
+      -->
+
+      <section class="cta" aria-label="call to action">
+        <div class="container">
+
+          <h2 class="h2 section-title">
+            Join our community by using our services and grow your business.
+          </h2>
+<!-- 
+          <a href="#" class="btn btn-primary">Try it For Free</a> -->
+
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+  
+  <!-- 
+    - #FOOTER
+  -->
+
+  <footer class="footer">
+    <div class="container grid-list">
+
+      <div class="footer-brand">
+
+        <a href="#" class="logo">
+          <img src="/assets/images/logo-light.svg" width="74" height="24" alt="Adex home">
+        </a>
+
+        <p class="footer-text" style="color: #ff9000;">
+         People Technology Possibilities
+        </p>
+
+
+        <p class="footer-text">
+          &copy;2023 AdainTech<br>All rights reserved.
+        </p>
+
+        <ul class="social-list">
+
+          <li>
+            <a href="https://www.facebook.com/Geezng?mibextid=LQQJ4d&mibextid=LQQJ4d" class="social-link">
+              <ion-icon name="logo-facebook"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://www.tiktok.com/@adain_tech?_t=ZM-8tPv57jvW2Y&_r=1" class="social-link">
+              <ion-icon name="logo-tiktok"></ion-icon>
+            </a>
+          </li>
+
+          <!-- <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-dribbble"></ion-icon>
+            </a>
+          </li> -->
+
+          <!-- <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+          </li> -->
+
+          <!-- <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-youtube"></ion-icon>
+            </a>
+          </li> -->
+
+        </ul>
+
+      </div>
+
+      <ul class="footer-list">
+
+        <li>
+          <p class="h4 footer-list-title">Get in Touch</p>
+        </li>
+
+        <li>
+          <address class="footer-text">
+           First Floor Skyblue Building Aso B
+          </address>
+        </li>
+
+        <li>
+          <a href="mailto:info@adain.com" class="footer-link">info@adain.com</a>
+        </li>
+
+        <li>
+          <a href="tel:09045585701" class="footer-link">09045585701</a>
+        </li>
+
+      </ul>
+
+      <ul class="footer-list">
+
+        <li>
+          <p class="h4 footer-list-title">Company</p>
+        </li>
+
+        <li>
+          <a href="/store/about.html" class="footer-link">About</a>
+        </li>
+
+        <li>
+          <a href="#" class="footer-link">Our Vision</a>
+        </li>
+
+        <li>
+          <a href="#" class="footer-link">Our Mission</a>
+        </li>
+
+        <li>
+          <a href="/tean.html" class="footer-link">Our Team</a>
+        </li>
+
+        <li>
+          <a href="#" class="footer-link"></a>
+        </li>
+
+      </ul>
+
+      <div class="footer-list">
+
+        <p class="h4 footer-list-title">Our Newsletter</p>
+
+        <p class="footer-text">
+          Subscribe to our newsletter.
+        </p>
+
+        <form action="" class="input-wrapper">
+          <input type="email" name="email_address" placeholder="Email Address" required class="input-field">
+
+          <button type="submit" class="submit-btn">Join</button>
+        </form>
+
+      </div>
+
+    </div>
+  </footer>
+
+
+
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="./assets/js/script.js"></script>
+
+  <!-- 
+    - ionicon
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+
+</body>
+
+</html>
